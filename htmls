@@ -1,0 +1,71 @@
+
+//enroll.html
+<html>
+<body>
+    <h2>Course Enrolment form for students</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+
+        Select a Student :&emsp;
+        <select name='sname' required>
+            <option value="">Select a student</option>
+            {% for student in students %}
+                <option value={{student.id}}>{{student.student_name}}</option>
+            {% endfor %}
+        </select><br/><br>
+        Select a Course :&emsp;
+        <select name="cname" required>
+            <option value="">Select a course</option>
+            {% for course in courses %}
+                <option value={{course.id}}>{{course.course_name}}</option>
+            {% endfor %}
+        </select><br><br/><br>  
+        
+        <input type="submit" value="Enroll" />
+    </form>
+</body>
+</html>
+
+
+
+course_search.html
+<html> 
+    <body>
+        <h2>Search any course</h2>
+        <form method="POST" action=""> 
+            Courses {% csrf_token %} 
+            
+            <select name="cname" required> 
+                <option value="">Select a course</option>
+                {%for course in courses %} 
+                <option value="{{course.id}}">{{course.course_name}}</option> 
+                {% endfor %} 
+            </select>&emsp; 
+            
+            <input type="submit" value="Search"> 
+        </form> 
+    </body>
+</html>
+
+
+
+selected_students.html
+<html> 
+    <body>
+        <h2>Students registered to this course</h2> 
+        <table border="1"> 
+            <tr> 
+                <th>Student Name</th> 
+                <th>Student USN</th> 
+                <th>Sem</th> 
+            </tr> 
+            
+            {% for student in student_list %} 
+                <tr> 
+                    <td>{{student.student_name}}</td> 
+                    <td>{{student.student_usn}}</td> 
+                    <td align="center">{{student.student_sem}}</td> 
+                </tr> {% endfor %} 
+        </table> 
+    </body>
+</html>
