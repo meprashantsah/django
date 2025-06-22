@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Student List</title>
+    </head>
+    <body>
+        
+        <h1>Student List</h1>
+        <ul>
+            {% for s in student_list %}
+                <a href="{% url 'stud_details' s.pk %}"><li>{{s}}</li></a>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

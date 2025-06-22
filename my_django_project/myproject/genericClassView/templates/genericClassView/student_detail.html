@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Student Details</title>
+    </head>
+    <body>
+        
+        <h1>Student Details</h1>
+        <div>
+            <p>Name : {{object.name}}</p>
+            <p>Usn : {{object.usn}}</p>
+            <p>Courses : {% for c in object.course.all %}</p>
+                {{c}} <br>
+            {% endfor %}
+        </div>
+    </body>
+</html>

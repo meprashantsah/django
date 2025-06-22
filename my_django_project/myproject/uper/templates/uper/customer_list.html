@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>
+            list
+        </title>
+        <body>
+            
+            {% for c in customer %}
+                <ul>
+                    <a href="details1/{{c.id}}"><li>{{c}}</li></a>
+                </ul>
+            {% endfor %}
+        </body>
+    </head>
+</html>

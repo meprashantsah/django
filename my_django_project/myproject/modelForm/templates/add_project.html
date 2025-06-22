@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Add Project</title>
+    </head>
+    <body>
+        <h1>Add a new Project</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="Submit">Save</button>
+        </form>
+    </body>
+</html>
